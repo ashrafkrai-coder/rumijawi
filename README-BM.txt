@@ -23,6 +23,21 @@ Penukar Rumi-Jawi, 66,025 entri kamus/pengecualian, padanan frasa, semakan angga
 Pembetulan disimpan dalam pelayar peranti (localStorage) dan kekal selepas halaman ditutup. Ia tidak dikongsi antara peranti:
 gunakan Eksport dan Import (fail TSV: Rumi<tab>Jawi) untuk memindahkan atau berkongsi senarai pembetulan.
 Versi baharu dimuat turun secara senyap di latar belakang dan digunakan apabila aplikasi dibuka semula.
+
+PENYEGERAKAN GOOGLE SHEET (helaian "Penukar Rumi-Jawi")
+1. Buka helaian > Sambungan > Apps Script > (+) Fail > Skrip baharu "pwa-sync". Tampal apps-script/pwa-sync.gs. Simpan.
+2. Pilih fungsi pasangPWA > Jalankan > benarkan akses. Catat KUNCI GURU yang dipaparkan.
+3. Kerahkan > Penggunaan baharu > Aplikasi web. Laksanakan sebagai: Saya. Akses: Sesiapa sahaja. Salin URL (/exec).
+4. Letak URL itu dalam app.js (const SHEET_URL='...'), naikkan CACHE dalam sw.js, kemudian deploy.
+5. Dalam PWA: Semakan Ejaan > Kunci guru > masukkan kunci. Hanya peranti dengan kunci boleh menulis ke Sheet.
+Cara ia berfungsi:
+- Pembetulan disimpan pada peranti dahulu, kemudian ke tab Pengecualian (Kategori "PWA"). Jika luar talian, ia
+  beratur dan dihantar apabila kembali dalam talian.
+- PWA menyemak versi helaian semasa dibuka, apabila kembali dalam talian dan setiap 5 minit. Jika Kamus atau
+  Pengecualian disunting, salinan penuh dimuat turun dan disimpan pada peranti (untuk luar talian).
+- Tanpa kunci guru, pembetulan disimpan pada peranti sahaja tetapi kamus tetap dikemas kini daripada Sheet.
+- Untuk menukar kunci: jalankan tukarKunciPWA dalam Apps Script.
+- Jika anda mengubah kod Apps Script, buat Kerahkan > Urus penggunaan > Edit > Versi baharu (URL kekal sama).
 Data kamus ialah salinan daripada fail yang diberi; tiada penyegerakan langsung Google Sheets.
 Fail PWA ini tidak memerlukan log masuk ChatGPT. Kawalan akses Vercel bergantung pada tetapan projek anda.
 
