@@ -1,6 +1,6 @@
 import {convert} from './engine.js';
 // URL aplikasi web Apps Script (berakhir dengan /exec) — lihat apps-script/pwa-sync.gs. Kosong = tiada penyegerakan Sheet.
-const SHEET_URL='';
+const SHEET_URL='https://script.google.com/macros/s/AKfycbwqfSO0zxUv9Dn1WNwg3gYMwtLR0eHcleLCjZ_00wr-7nZfHV4aan11wuMTNlavqkBEZw/exec';
 const $=id=>document.getElementById(id);let dict=null,active=null,segments=[],kunci='',sheetVersi=null,syncState='',syncing=false,deferred=null,timer,size=32;
 const STORE='jawi-pembetulan',OUTBOX='jawi-outbox',KUNCI='jawi-kunci',SHEET_CACHE='kamus-sheet',SHEET_KEY='./__kamus-sheet.json';
 const readMap=key=>{const m=Object.create(null);try{for(const [k,v]of Object.entries(JSON.parse(localStorage.getItem(key)||'{}')))if(typeof v==='string'&&v.trim())m[k]=v;}catch{}return m;};
