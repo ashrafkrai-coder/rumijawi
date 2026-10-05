@@ -19,8 +19,10 @@ iPhone/iPad: Safari > Kongsi > Add to Home Screen.
 Buka sekali dalam talian dan tunggu kamus selesai dimuatkan sebelum menggunakan mod luar talian.
 
 FUNGSI
-Penukar Rumi-Jawi, 66,025 entri kamus/pengecualian, padanan frasa, semakan anggaran, salin, saiz tulisan, eksport pembetulan TSV.
-Pembetulan hanya digunakan sepanjang sesi. Eksport sebelum menutup halaman.
+Penukar Rumi-Jawi, 66,025 entri kamus/pengecualian, padanan frasa, semakan anggaran, salin, saiz tulisan, import/eksport pembetulan TSV.
+Pembetulan disimpan dalam pelayar peranti (localStorage) dan kekal selepas halaman ditutup. Ia tidak dikongsi antara peranti:
+gunakan Eksport dan Import (fail TSV: Rumi<tab>Jawi) untuk memindahkan atau berkongsi senarai pembetulan.
+Apabila versi baharu dipasang, notis "Versi baharu tersedia" dipaparkan dengan butang Muat semula.
 Data kamus ialah salinan daripada fail yang diberi; tiada penyegerakan langsung Google Sheets.
 Fail PWA ini tidak memerlukan log masuk ChatGPT. Kawalan akses Vercel bergantung pada tetapan projek anda.
 
@@ -30,4 +32,5 @@ Apabila mengemas kini aplikasi/kamus, ubah CACHE dalam sw.js (contoh jawi-v1 -> 
 Fallback huruf ialah anggaran, bukan ejaan Jawi yang dijamin tepat.
 
 FAIL
-index.html, style.css, app.js, engine.js, kamus.json, manifest.webmanifest, sw.js, icon-192.png, icon-512.png, vercel.json.
+index.html, style.css, app.js, engine.js, kamus.json, manifest.webmanifest, sw.js, icon-192.png, icon-512.png, vercel.json,
+fonts/NotoNaskhArabic-arabic.woff2 (Noto Naskh Arabic, Google Fonts, lesen SIL Open Font License 1.1).
