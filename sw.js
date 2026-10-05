@@ -1,4 +1,4 @@
-const CACHE='jawi-v5';
+const CACHE='jawi-v6';
 const ASSETS=['./','./index.html','./style.css','./app.js','./engine.js','./kamus.json','./manifest.webmanifest','./icon-192.png','./icon-512.png','./fonts/NotoNaskhArabic-arabic.woff2'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(async cache=>{for(const asset of ASSETS){const response=await fetch(new Request(asset,{cache:'reload'}));if(!response.ok||response.redirected||(asset.endsWith('.json')&&!response.headers.get('content-type')?.includes('json')))throw Error('Asset unavailable');await cache.put(asset,response);}await self.skipWaiting();})));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('jawi-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));

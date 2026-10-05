@@ -22,7 +22,7 @@ FUNGSI
 Penukar Rumi-Jawi, 66,025 entri kamus/pengecualian, padanan frasa, semakan anggaran, salin, saiz tulisan, import/eksport pembetulan TSV.
 Pembetulan disimpan dalam pelayar peranti (localStorage) dan kekal selepas halaman ditutup. Ia tidak dikongsi antara peranti:
 gunakan Eksport dan Import (fail TSV: Rumi<tab>Jawi) untuk memindahkan atau berkongsi senarai pembetulan.
-Apabila versi baharu dipasang, notis "Versi baharu tersedia" dipaparkan dengan butang Muat semula.
+Versi baharu dimuat turun secara senyap di latar belakang dan digunakan apabila aplikasi dibuka semula.
 Data kamus ialah salinan daripada fail yang diberi; tiada penyegerakan langsung Google Sheets.
 Fail PWA ini tidak memerlukan log masuk ChatGPT. Kawalan akses Vercel bergantung pada tetapan projek anda.
 
